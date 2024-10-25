@@ -1,40 +1,38 @@
-JS    
+JS
 
-
-function calcularImovel(metragem, quartos) {
-    const precoM2 = 3000; // Preço fixo 
-
+function calcularImovel(metragem, quartos, precoM2) {
     // Verifica o número de quartos
     switch (quartos) {
         case 1:
             return metragem * precoM2;
         case 2:
-            return metragem * precoM2 * 1.1;
+            return metragem * precoM2 * 1.1; // 10% a mais para 2 quartos
         case 3:
-            return metragem * precoM2 * 1.2; 
+            return metragem * precoM2 * 1.2; // 20% a mais para 3 quartos
         case 4:
-            return metragem * precoM2 * 1.3; 
+            return metragem * precoM2 * 1.3; // 30% a mais para 4 quartos
         default:
             alert("Não permitido.");
             return null; // Retorna null se não for permitido
     }
 }
-// funcao calular 
+
 function calcular() {
     const quartos = parseInt(document.getElementById("quartos").value);
     const metragem = parseFloat(document.getElementById("metragem").value);
+    const precoM2 = parseFloat(document.getElementById("precoM2").value);
     const tipoImovel = document.querySelector('input[name="tipo"]:checked').value;
 
     const resultadoDiv = document.getElementById("resultado");
 
-    // Verifica se os valores são válidos cocm o isNan que verifica se oque foi colocado é um numero ou nao
-    if (isNaN(quartos) || isNaN(metragem)) {
-        resultadoDiv.innerHTML = "Por favor, preencha todos os campos corretamente.";// exibe essa mensagem caso o valor seja invalido
+    // Verifica se os valores são válidos
+    if (isNaN(quartos) || isNaN(metragem) || isNaN(precoM2)) {
+        resultadoDiv.innerHTML = "Por favor, preencha todos os campos corretamente.";
         resultadoDiv.style.color = '#e74c3c'; // Cor vermelha para mensagem de erro
         return;
     }
 
-    let preco = calcularImovel(metragem, quartos);
+    let preco = calcularImovel(metragem, quartos, precoM2);
 
     if (preco !== null) {
         // Se for um apartamento, adiciona o valor extra
@@ -43,7 +41,7 @@ function calcular() {
         }
 
         // Exibe o resultado com a frase solicitada
-        resultadoDiv.innerHTML = `O valor do seu imóvel é de\n R$ ${preco.toFixed(2)}`;
+        resultadoDiv.innerHTML = `O valor do seu imóvel é de: R$ ${preco.toFixed(2)}`;
         resultadoDiv.style.color = '#2ecc71'; // Cor verde para o texto de sucesso
     } else {
         resultadoDiv.innerHTML = "Cálculo não permitido para mais de 4 quartos.";
