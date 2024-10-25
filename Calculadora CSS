@@ -1,0 +1,91 @@
+CSS  
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 25px; /* Border-radius maior */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    width: 400px; /* Container mais largo */
+    text-align: center;
+}
+
+h1 {
+    font-size: 28px; /* Título maior */
+    color: #333333;
+    margin-bottom: 30px; /* Maior espaçamento abaixo do título */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 10px;
+    color: #444444;
+    text-align: left;
+}
+
+input[type="number"] {
+    padding: 14px; /* Mais espaçamento interno */
+    margin-bottom: 20px; /* Mais espaçamento entre os campos */
+    border: 2px solid #ccc;
+    border-radius: 10px; /* Bordas dos inputs mais arredondadas */
+    width: 100%;
+    box-sizing: border-box;
+    color: #333333;
+    font-size: 16px; /* Texto dos inputs maior */
+}
+
+.tipo-imovel {
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-left: 50px;
+}
+.tipo-imovel label {
+    margin-top: 10px;
+    margin-right: 70px; /* Aproxima o texto do botão de rádio */
+}
+
+
+button {
+    background-color: #333333;
+    color: white;
+    border: none;
+    padding: 16px; /* Botão mais "gordinho" */
+    border-radius: 10px; /* Bordas arredondadas no botão */
+    cursor: pointer;
+    font-size: 18px; /* Texto do botão maior */
+    margin-bottom: 20px; /* Mais espaço abaixo do botão */
+}
+
+button:hover {
+    background-color: #555555;
+}
+
+#resultado {
+    margin-top: 25px; /* Mais espaçamento acima do resultado */
+    font-size: 20px; /* Texto do resultado maior */
+    color: #2ecc71;
+    font-weight: bold;
+    display: inline;
+}
+
+input:focus {
+    outline-color: #555555;
+}
+
