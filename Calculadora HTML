@@ -1,0 +1,37 @@
+HTML  
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Venda Imóvel</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Simulador de Venda Imóvel</h1>
+        <form id="simuladorForm">
+            <label for="quartos">Quantidade de quartos</label>
+            <input type="number" id="quartos" name="quartos" placeholder="Quantidade de quartos" required>
+
+            <label for="metragem">Metragem</label>
+            <input type="number" id="metragem" name="metragem" placeholder="Metragem" required>
+
+            <label>Tipo de imóvel</label>
+            <div class="tipo-imovel">
+                <input type="radio" id="casa" name="tipo" value="casa" checked>
+                <label for="casa">Casa</label>
+                <input type="radio" id="apartamento" name="tipo" value="apartamento">
+                <label for="apartamento">Apartamento</label>
+            </div>
+
+            <button type="button" onclick="calcular()">Calcular</button>
+        </form>
+
+        <div id="resultado" class="resultado"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
